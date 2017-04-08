@@ -1,0 +1,13 @@
+<div [hidden]='isPop()' class="popup">
+    <div>Name : {{mediaItem ? mediaItem.name: ""}}</div>
+    <div>Category : {{mediaItem ? mediaItem.category: ""}}</div>
+    <div>Medium : {{mediaItem ? mediaItem.medium: ""}}</div>
+    <div>Watched On : {{mediaItem ? mediaItem.watchedOn: ""}}</div>
+    <div>Year : {{mediaItem ? mediaItem.year: ""}}</div>
+    <button (click)='isNext()'>></button>
+    <img *ngFor='let pic of picPath ' [mwFavorite]='pic.visibility' src={{pic.path}} class="pic">
+    <button (click)='isPrev()'><</button>
+    <div>
+        <a class="X" (click)="onClose()">Close</a>
+    </div>
+</div>

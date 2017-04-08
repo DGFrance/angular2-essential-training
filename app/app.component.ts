@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input} from '@angular/core';
 
 @Component({
   selector: 'mw-app',
@@ -6,10 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['app/app.component.css']
 })
 export class AppComponent {
+  //@Input() mediaItem;
+   popup = null;
   onMediaItemDelete(mediaItem) {
-    
+  
   }
-
+  onMediaItemPreview(mediaItem){
+    this.popup = mediaItem;
+    }
+onMediaClose(){
+  this.popup = null;
+}
   firstMediaItem = {
     id: 1,
     name: "Firebug",
